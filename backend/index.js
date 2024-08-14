@@ -13,14 +13,14 @@ app.use(express.json())
 connectDB()
 
 // app.use("/user", userRouter)
-app.use("/messages", messageRoutes)
+app.use("/api/v1/messages", messageRoutes)
 
 app.use("*", (req, res, next) => {
   return res.status(404).json("❌ Route not found")
 })
 
-const PORT = process.env.PORT || 4002
+const PORT = process.env.PORT || 8002
 
 app.listen(PORT, () => {
-  console.log("✅ Servidor levantado en puerto 4002")
+  console.log("✅ Servidor levantado en puerto 8002")
 })
